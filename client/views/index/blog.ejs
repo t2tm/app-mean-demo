@@ -1,0 +1,30 @@
+<!-- views/pages/index.ejs -->
+
+<% include ../common/header %>
+
+<div class="row">
+  <div class="col-md-6">
+	<!-- Meetups View -->
+	<div ng-controller="blogController">
+	<div class="alert alert-warning">There are {{blogList.length}} blog articles</div>
+
+	<form ng-submit="createBlog()">
+        <table class="table">
+            <thead>
+                <tr><th>Blog Edit</th></tr>
+            </thead>
+
+            <tbody>
+                <tr><td><input type="text" class="form-control" placeholder="Blog Title" ng-model="blogTitle"></input></td></tr>
+                <tr><td><textarea class="form-control" placeholder="Blog Content" ng-model="blogContent"></textarea></td></tr>
+                <tr><td><input type="Submit" class="btn btn-info" value="Submit"></td></tr>
+            </tbody>
+
+        </table>
+
+	</form>
+	</div>
+  </div>
+</div>
+
+<% include ../common/footer %>
