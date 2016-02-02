@@ -1,4 +1,7 @@
-app.factory('utilityService', function($http, $q){
+'use strict';
+
+app.factory('utilityService', [function($http, $q){
+
     var utilityService = {
         getFormattedDate: function(date){
             var hours = date.getHours();
@@ -10,10 +13,10 @@ app.factory('utilityService', function($http, $q){
             minutes = minutes < 10 ? '0'+minutes : minutes;
             var strTime = hours + ':' + minutes + ' ' + ampm;
             var formattedDate = date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
-            //console.log(formattedDate);
+
             return formattedDate;
         }
     }
 
     return utilityService;
-});
+}]);

@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('blogController', ['$scope', '$resource', 'utilityService', function ($scope, $resource, utilityService) {
   var Blog = $resource('/api/blog');
 

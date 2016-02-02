@@ -1,27 +1,29 @@
+'use strict';
+
 module.exports = {
 
     'facebookAuth' : {
-        'clientID'      : '944493358963123', // your App ID
-        'clientSecret'  : '6bd7e54f810d16cd1cbdaf3ed8c10c22', // your App Secret
-        'callbackURL'   : '/auth/facebook/callback'
+        'clientID'      : 'your-clientID-here', // your facebook App ID
+        'clientSecret'  : 'your-clientSecret-here', // your facebook App Secret
+        'callbackURL'   : '/auth/facebook/callback' // your facebook auth callback
     },
 
     'weiboAuth' : {
-        'appKey'        : '3103887328', // your App ID
-        'appSecret'     : '9084c76447feb03b22aa2511a5871280', // your App Secret
-        'callbackURL'   : '/auth/weibo/callback'
+        'appKey'        : 'your-appKey-here', // your weibo App Key
+        'appSecret'     : 'your-appSecrect-here', // your weibo App Secret
+        'callbackURL'   : '/auth/weibo/callback' // your weibo auth callback
     },
 
     'twitterAuth' : {
-        'consumerKey'       : 'your-consumer-key-here',
-        'consumerSecret'    : 'your-client-secret-here',
-        'callbackURL'       : '/auth/twitter/callback'
+        'consumerKey'       : 'your-consumer-key-here', // your twitter consumer key
+        'consumerSecret'    : 'your-client-secret-here', //your twitter consumer secret
+        'callbackURL'       : '/auth/twitter/callback' // your twitter auth callback
     },
 
     'googleAuth' : {
-        'clientID'      : 'your-secret-clientID-here',
-        'clientSecret'  : 'your-client-secret-here',
-        'callbackURL'   : '/auth/google/callback'
+        'clientID'      : 'your-secret-clientID-here', // your google client ID
+        'clientSecret'  : 'your-client-secret-here', // your google client secret
+        'callbackURL'   : '/auth/google/callback' // your google auth callback
     }
 
 };

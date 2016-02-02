@@ -1,3 +1,5 @@
+'use strict';
+
 // get blog schema
 var Blog = require('../models/blog');
 

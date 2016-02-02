@@ -1,3 +1,5 @@
-var app = angular.module('selfstudyApp', ['ngResource','ngRoute']);
+'use strict';
 
 $('.dropdown-toggle').dropdown();
+
+var app = angular.module('selfstudyApp', ['ngResource','ngRoute']);

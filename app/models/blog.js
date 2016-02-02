@@ -1,3 +1,5 @@
+'use strict';
+
 var mongoose = require('mongoose');
 
 // blog schema in json

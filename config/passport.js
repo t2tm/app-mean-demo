@@ -1,3 +1,5 @@
+'use strict';
+
 // config/passport.js
 
 // load all the things we need
@@ -158,7 +160,7 @@ module.exports = function(passport) {
                             })
                         }
                         // if user found and nothing goes wrong, and then return that user
-                        return done(null, user); 
+                        return done(null, user);
                     } else {
                         // if there is no user found with that facebook id, create them
                         var newUser            = new User();
@@ -182,13 +184,13 @@ module.exports = function(passport) {
             }else{
                 // user already logs into system
                 var user = req.user
-                
+
                 // update user facebook info
                 user.facebook.id     = profile.id;
                 user.facebook.token  = token;
                 user.facebook.name   = profile.displayName;
                 user.facebook.email  = profile.emails[0].value;
-                
+
                 // update user
                 user.save(function(err) {
                     if (err)
@@ -205,16 +207,16 @@ module.exports = function(passport) {
         clientSecret    :    configAuth.weiboAuth.appSecret,
         callbackURL     :    configAuth.weiboAuth.callbackURL,
         passReqToCallback: true
-    }, 
-    
+    },
+
     // weibo sends back the token and profile
     function(req, token, refreshToken, profile, done) {
-        
+
         // asynchronous
         process.nextTick(function () {
             if (!req.user) {
                 User.findOne({ 'weibo.id': profile.id }, function(err, user) {
-                    
+
                     // if there is an error, stop everything and return that
                     if (err)
                         return done(err)
@@ -225,7 +227,7 @@ module.exports = function(passport) {
                         if (!user.weibo.token) {
                             user.weibo.token = token;
                             user.weibo.name = profile.name;
-                            
+
                             // save weibo info into user account
                             user.save(function(err) {
                                 if (err)
@@ -239,7 +241,7 @@ module.exports = function(passport) {
                     } else {
                         // create new user
                         var newUser = new User()
-                        
+
                         // set all of the facebook information in our user model
                         newUser.weibo.id    = profile.id
                         newUser.weibo.token = token
@@ -256,12 +258,12 @@ module.exports = function(passport) {
             } else {
                 // user already logs into system
                 var user = req.user
-                
+
                 // update user weibo info
                 user.weibo.id     = profile.id
                 user.weibo.token  = token
                 user.weibo.name   = profile.displayName
-                
+
                 // update user
                 user.save(function(err) {
                     if (err)
