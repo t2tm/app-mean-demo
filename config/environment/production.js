@@ -2,6 +2,10 @@
 
 module.exports = {
 
+    'mongodb' : {
+        'url' : 'mongodb://localhost:27017/app-demo'
+    },
+
     'facebookAuth' : {
         'clientID'      : 'your-clientID-here', // your facebook App ID
         'clientSecret'  : 'your-clientSecret-here', // your facebook App Secret

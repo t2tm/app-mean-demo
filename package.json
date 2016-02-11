@@ -3,16 +3,21 @@
   "main": "server.js",
   "dependencies": {
     "bcrypt-nodejs": "latest",
+    "body-parser": "^1.15.0",
     "connect-flash": "~0.1.1",
-    "express": "~3.4.4",
+    "cookie-parser": "^1.4.1",
     "ejs": "~0.8.5",
-    "mongoose": "~3.8.1",
+    "express": "~4.13.4",
+    "express-session": "^1.13.0",
+    "lodash": "^4.3.0",
+    "mongodb": "~2.1.7",
+    "mongoose": "~4.4.3",
     "morgan": "^1.5.1",
     "passport": "~0.1.17",
-    "passport-local": "~0.1.6",
     "passport-facebook": "~1.0.2",
-    "passport-twitter": "~1.0.2",
     "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2",
     "passport-weibo": "^0.1.2"
   },
   "devDependencies": {
@@ -21,6 +26,7 @@
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^1.1.0"
+    "grunt-sass": "^1.1.0",
+    "bower": "^1.7.2"
   }
 }

@@ -1,19 +1,19 @@
 <% include ../common/header %>
 
-	<div class="row">
-	  <div class="col-md-12">
-		<!-- Meetups View -->
-		<div ng-controller="blogController">
-		<div class="alert alert-success">There are {{blogList.length}} blog articles</div>
-		<ul>
-		  <li ng-repeat="blogEntry in blogList">
-			<h3>{{blogEntry.post_title}}</h3>
-            <small>{{blogEntry.post_date}}</small>
-	        <p>{{blogEntry.post_content}}</p>
-		  </li>
-		</ul>
-		</div>
-	  </div>
-	</div>
+<div class="row">
+    <div class="col-md-12">
+    <!-- Home Index View -->
+        <div ng-controller="blogController">
+            <div class="alert alert-success">There are {{blogList.length}} blog articles</div>
+            <ul>
+                <li ng-repeat="blogEntry in blogList | orderBy: blogEntry.post_date : true">
+                    <h3>{{blogEntry.post_title}}</h3>
+                    <small>{{blogEntry.post_date}}</small>
+                    <p>{{blogEntry.post_content}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <% include ../common/footer %>
